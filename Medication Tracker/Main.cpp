@@ -26,7 +26,7 @@ int mainPage() {
 	//keeps variable in scope
 	static vector<Patient> Patients;
 
-	//prints out dialogue 
+	//prints out dialog
 	cout << "Select a page:" << endl;
 	cout << "01 - Add Client" << endl;
 	cout << "02 - Add Medication" << endl;
