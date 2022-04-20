@@ -1,0 +1,42 @@
+\hypertarget{_medication_8h_source}{}\doxysection{Medication.\+h}
+\label{_medication_8h_source}\index{C:/Users/Kaden/source/repos/Medication Tracker/Medication Tracker/Medication.h@{C:/Users/Kaden/source/repos/Medication Tracker/Medication Tracker/Medication.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_medication}{Medication}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{protected}: \textcolor{comment}{//keeps everything encapsulated }}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} m\_numoftablets;}
+\DoxyCodeLine{11     \textcolor{keywordtype}{string} m\_time;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{string} m\_name;}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{comment}{//Default Constructor}}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_medication}{Medication}}() \{ \textcolor{comment}{//default values for variables}}
+\DoxyCodeLine{17         m\_numoftablets = 1;}
+\DoxyCodeLine{18         std::string m\_time = \textcolor{stringliteral}{"{}6:00"{}};}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{//Overload Constructor}}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_medication}{Medication}}(\textcolor{keywordtype}{string} medname, \textcolor{keywordtype}{string} medtime, \textcolor{keywordtype}{int} tablets) \{}
+\DoxyCodeLine{23         m\_name = medname;}
+\DoxyCodeLine{24         m\_time = medtime;}
+\DoxyCodeLine{25         m\_numoftablets = tablets;}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} setName(std::string name) \{ m\_name = name; \}}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} setTime(std::string time) \{ m\_time = time; \}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} setNumoftablets(\textcolor{keywordtype}{int} num) \{ m\_numoftablets = num; \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     std::string getName() \{ \textcolor{keywordflow}{return} m\_name; \} \textcolor{comment}{//reveals encapsulated variables}}
+\DoxyCodeLine{34     std::string getTime() \{ \textcolor{keywordflow}{return} m\_time; \}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} getNumoftablets() \{ \textcolor{keywordflow}{return} m\_numoftablets; \}}
+\DoxyCodeLine{36 \};}
+
+\end{DoxyCode}

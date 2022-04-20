@@ -140,10 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Medication.cpp" />
-    <ClCompile Include="Patient.cpp" />
-    <ClCompile Include="Prescription.cpp" />
-    <ClCompile Include="Supplement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Medication.h" />

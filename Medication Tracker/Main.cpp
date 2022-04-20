@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "Patient.h"
+#include <stdlib.h>
 using namespace std;
 
 //prototypes
@@ -9,7 +10,7 @@ template <class T>
 void Vectorprint(vector<T> vector);
 void AddClient(vector<Patient> &Patients);
 void AddMedication(vector<Patient> &Patients);
-int ClientInfo(vector<Patient> &Patients);
+void ClientInfo(vector<Patient> &Patients);
 int CloseApplication();
 int mainPage();
 
@@ -137,29 +138,35 @@ void AddMedication(vector<Patient>& Patients) {
 	mainPage();
 }
 
-int ClientInfo(vector<Patient> &Patients) {
-	cout << "Client Info" << endl;
-	//Displays Client names
-	if (Patients.size() > 0) {
-		for (int i = 0; i < Patients.size(); i++) { 
-			Patients[i].printData();
-			Patients[i].printMeds();
+void ClientInfo(vector<Patient> &Patients) {
+	if (Patients.size() < 1) {
+		cout << "No clients added at the current moment. Add a client from the client add page." << endl;
+		mainPage();
+	}
+	else {
+		cout << "Client Info" << endl;
+		//Displays Client names
+		if (Patients.size() > 0) {
+			for (int i = 0; i < Patients.size(); i++) {
+				Patients[i].printData();
+				Patients[i].printMeds();
+			}
 		}
-	}
 
-	//Validates input
-	string input = "0";
-	while (input != "1") {
-		cout << "Press 1 to continue to home" << endl;
-		cin >> input;
+		//Validates input
+		string input = "0";
+		while (input != "1") {
+			cout << "Press 1 to continue to home" << endl;
+			cin >> input;
+		}
+		mainPage();
 	}
-	mainPage();
-	return 0;
 }
 
 int CloseApplication() {
 	cout << "Application closed" << endl;
 	//Closes Application 
+	exit(1);
 	return 0;
 }
 

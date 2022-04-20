@@ -1,0 +1,93 @@
+\hypertarget{_patient_8h_source}{}\doxysection{Patient.\+h}
+\label{_patient_8h_source}\index{C:/Users/Kaden/source/repos/Medication Tracker/Medication Tracker/Patient.h@{C:/Users/Kaden/source/repos/Medication Tracker/Medication Tracker/Patient.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Medication.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Prescription.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Supplement.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 \textcolor{comment}{/* This object should be capable of holding an array of objects}}
+\DoxyCodeLine{10 \textcolor{comment}{"{}Supplements"{}"{}}}
+\DoxyCodeLine{11 \textcolor{comment}{*/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_patient}{Patient}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}: \textcolor{comment}{//The following field keeps the variable "{}passcode"{} inside the patient class encapsulated from the user}}
+\DoxyCodeLine{15     \textcolor{comment}{//Member Variables}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} m\_passcode = NULL;}
+\DoxyCodeLine{17     vector<Medication> Vectorofmeds;\textcolor{comment}{//Medications of patient}}
+\DoxyCodeLine{18     vector<Prescription> Vectorofprescriptions;\textcolor{comment}{//Prescriptions of patient}}
+\DoxyCodeLine{19     vector<Supplement> Vectorofsupplements;\textcolor{comment}{//Supplements of patient}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{/*}}
+\DoxyCodeLine{23 \textcolor{comment}{    Source: https://www.youtube.com/watch?v=iPlW5tSUOUM}}
+\DoxyCodeLine{24 \textcolor{comment}{    */}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{//Member variables}}
+\DoxyCodeLine{27     \textcolor{keywordtype}{string} m\_pname;\textcolor{comment}{//System::string (Receives input from program)}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{string} m\_pemail;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{string} m\_pnumber;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} m\_textnotifications = \textcolor{keyword}{false}; \textcolor{comment}{//default sets to false}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} m\_emailnotifications = \textcolor{keyword}{false}; \textcolor{comment}{//default sets to false}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{//Default Constructor}}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_patient}{Patient}}() \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{//Overload Constructors}}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_patient}{Patient}}(\textcolor{keywordtype}{string} Name, \textcolor{keywordtype}{string} Email, \textcolor{keywordtype}{string} Phone, \textcolor{keywordtype}{bool} emailbool, \textcolor{keywordtype}{bool} textbool) \{}
+\DoxyCodeLine{42         m\_pname = Name;}
+\DoxyCodeLine{43         m\_pemail = Email;}
+\DoxyCodeLine{44         m\_pnumber = Phone;}
+\DoxyCodeLine{45         m\_textnotifications = emailbool;}
+\DoxyCodeLine{46         m\_emailnotifications = textbool;}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{//Destructor}}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_patient}{\string~Patient}}() \{}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{//Mutator Functions}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} pushMeds(\mbox{\hyperlink{class_medication}{Medication}} meds) \{ Vectorofmeds.push\_back(meds); \}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} setPrescriptions(vector<Prescription> prescriptions) \{ Vectorofprescriptions = prescriptions; \}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} setSupplements(vector<Supplement> Supplements) \{ Vectorofsupplements = Supplements; \}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} setName(\textcolor{keywordtype}{string} name) \{ m\_pname = name; \}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} setEmail(\textcolor{keywordtype}{string} email) \{ m\_pemail = email; \}}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} setPhone(\textcolor{keywordtype}{string} number) \{ m\_pnumber = number; \}}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} setEmailson() \{ m\_emailnotifications = \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} setEmailsoff() \{ m\_emailnotifications = \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} setTextson() \{ m\_textnotifications = \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} setTextsoff() \{ m\_textnotifications = \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} printData() \{}
+\DoxyCodeLine{66         cout << \textcolor{stringliteral}{"{}Patient's Name: "{}} << m\_pname << endl;}
+\DoxyCodeLine{67         cout << \textcolor{stringliteral}{"{}Patient's Email: "{}} << m\_pemail << endl;}
+\DoxyCodeLine{68         cout << \textcolor{stringliteral}{"{}Patient's Phone: "{}} << m\_pnumber << endl;}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} printMeds() \{}
+\DoxyCodeLine{71         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Vectorofmeds.size(); i++) \{}
+\DoxyCodeLine{72             cout << \textcolor{stringliteral}{"{}Medication: "{}} << Vectorofmeds[i].getName()}
+\DoxyCodeLine{73                 << \textcolor{stringliteral}{"{} Time: "{}} << Vectorofmeds[i].getTime() << \textcolor{stringliteral}{"{} Tablets: "{}} }
+\DoxyCodeLine{74                 << Vectorofmeds[i].getNumoftablets() << endl;}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{//Accessor Functions}}
+\DoxyCodeLine{79     vector<Medication> getMeds() \{ \textcolor{keywordflow}{return} Vectorofmeds; \} \textcolor{comment}{//Reveals encapsulated variables}}
+\DoxyCodeLine{80     vector<Prescription> getPrescription() \{ \textcolor{keywordflow}{return} Vectorofprescriptions; \}}
+\DoxyCodeLine{81     vector<Supplement> getSupplement() \{ \textcolor{keywordflow}{return} Vectorofsupplements; \}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{string} getName() \{ \textcolor{keywordflow}{return} m\_pname; \}}
+\DoxyCodeLine{83     \textcolor{keywordtype}{string} getEmail() \{ \textcolor{keywordflow}{return} m\_pname; \}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{string} getNumber() \{ \textcolor{keywordflow}{return} m\_pnumber; \}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{bool} Textnotifications() \{ \textcolor{keywordflow}{return} m\_textnotifications; \}}
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} Emailnotifications() \{ \textcolor{keywordflow}{return} m\_emailnotifications; \}}
+\DoxyCodeLine{87 \};}
+
+\end{DoxyCode}
